@@ -3,6 +3,19 @@ import time
 
 
 def on_connect(cclient, userdata, flags, reason_code, properties):
+    """
+    This function is called when the client connects to the broker.
+
+    Parameters:
+    - client: The client object
+    - userdata: Any user data
+    - flags: Flags representing connection
+    - reason_code: The reason for connection
+    - properties: Properties related to the connection
+
+    Returns:
+    None
+    """
     if reason_code == 0:
         print("connected OK")
     else:
@@ -10,6 +23,19 @@ def on_connect(cclient, userdata, flags, reason_code, properties):
 
 
 def on_disconnect(client, userdata, flags, reason_code, properties):
+    """
+    Function to handle disconnection from the client.
+
+    Parameters:
+    - client: The client object
+    - userdata: Any user data
+    - flags: Flags representing the disconnection
+    - reason_code: The reason for disconnection
+    - properties: Properties related to the disconnection
+
+    Returns:
+    None
+    """
     print("disconnecting reason= ", reason_code)
 
 

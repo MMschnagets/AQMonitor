@@ -49,6 +49,17 @@ class DBManager:
         return conn
 
     @db_routine
+    def create_table(self, schema_path="./data/schema.sql"):
+        """
+        A database routine to create a table from the specified schema file.
+        :param schema_path: The path to the schema file
+        :return: None
+        """
+        with open(schema_path, 'r') as schema_file:
+            schema_sql = schema_file.read()
+        self.cursor.executescript(schema_sql)
+
+    @db_routine
     def insert_values(self, table_name, **kwargs):
         """
         A database routine to insert values into the specified table.
